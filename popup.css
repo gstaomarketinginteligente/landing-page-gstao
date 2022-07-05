@@ -1,0 +1,339 @@
+.root.active {
+  pointer-events: none;
+}
+
+.root.active::before {
+  position: absolute;
+  content: '';
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 811vh;
+  z-index: 10;
+}
+
+.popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  width: 65vw;
+  height: 75vh;
+  background: -webkit-gradient(linear, left bottom, left top, from(#0a0a0a), color-stop(93.75%, #282828));
+  background: linear-gradient(360deg, #0a0a0a 0%, #282828 93.75%);
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: auto;
+}
+
+.popup::-webkit-scrollbar {
+  display: none;
+}
+
+.popup.active {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.popup .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.3fr 1.8fr 0.9fr 1.7fr 0.3fr;
+      grid-template-columns: 0.3fr 1.8fr 0.9fr 1.7fr 0.3fr;
+  -ms-grid-rows: 0.4fr 2.4fr 0.2fr;
+      grid-template-rows: 0.4fr 2.4fr 0.2fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  width: 100%;
+  padding: 2.4rem;
+}
+
+.popup .container .header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.7fr 0.6fr 1.6fr 0.1fr;
+      grid-template-columns: 1.7fr 0.6fr 1.6fr 0.1fr;
+  -ms-grid-rows: (1fr)[3];
+      grid-template-rows: repeat(3, 1fr);
+  gap: 0px 0px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: 1 / 2 / 2 / 5;
+}
+
+.popup .container .header .logo {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 4 / 3;
+}
+
+.popup .container .header .close {
+  color: var(--white);
+  font-size: 32px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: 2 / 4 / 2 / 4;
+}
+
+.popup .container .header .close:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.popup .container .navDots {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 5 / 3 / 6;
+}
+
+.popup .container .form {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: 2 / 2 / 3 / 5;
+  padding: 7rem 5vw 0;
+  overflow: auto;
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.popup .container .form::-webkit-scrollbar {
+  display: none;
+}
+
+.popup .container .form .formCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  margin-bottom: 5rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.popup .container .form .formCard .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.popup .container .form .formCard .number {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 175%;
+  text-align: right;
+  color: var(--yellow);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.popup .container .form .formCard .title {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 175%;
+  color: var(--white);
+  margin-left: 2rem;
+  margin-bottom: 0.6rem;
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.popup .container .form .formCard input {
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 175%;
+  color: var(--light-gray);
+  margin-left: 3.4rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--light-gray);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  outline: none;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.popup .container .form .formCard input:focus {
+  color: var(--white);
+  border-bottom: 2px solid var(--white);
+}
+
+.popup .container .form .formCard .errorMessageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.popup .container .form .formCard button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 130%;
+  color: var(--white);
+  margin-left: 3.4rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: var(--yellow);
+  border: none;
+  padding: 0 1.1rem;
+  -webkit-clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+          clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+}
+
+.popup .container .form .formCard button i {
+  font-size: 2rem;
+  line-height: 3rem;
+  pointer-events: none;
+}
+
+.popup .container .form .formCard button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.popup .container .form .formCard .errorMessage {
+  visibility: hidden;
+  opacity: 0;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 130%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: var(--orange);
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.popup .container .form .formCard .errorMessage i {
+  font-size: 24px;
+}
+
+.popup .container .form .formCard.inactive .number, .popup .container .form .formCard.inactive .title {
+  color: var(--gray);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+}
+
+.popup .container .form .formCard.invisible {
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  opacity: 0;
+}
+
+#final {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.thanksCard {
+  position: absolute;
+  visibility: hidden;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 11;
+}
+
+.thanksCard.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.thanksCard .thanksClose {
+  position: absolute;
+  top: 5%;
+  left: 94%;
+  z-index: 12;
+  font-size: 2rem;
+  color: var(--white);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.thanksCard .thanksClose:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+@media only screen and (max-width: 1024px) {
+  .popup .container {
+    padding: 6rem 2.4rem;
+  }
+  .popup .container .form {
+    padding: 0;
+  }
+  .popup .container .form .formCard {
+    margin-bottom: 7rem;
+  }
+}
+/*# sourceMappingURL=popup.css.map */
