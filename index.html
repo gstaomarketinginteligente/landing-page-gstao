@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="imagex/svg" href="./images/logo.svg" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/flickity/dist/flickity.min.css"
+      media="screen"
+    />
+    <link rel="stylesheet" href="popup.css" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/boxicons/css/boxicons.min.css"
+    />
+    <script src="./scrollHelper.js" defer></script>
+    <title>Gstão</title>
+  </head>
+  <body>
+    <div class="popup">
+      <div class="container">
+        <div class="header">
+          <img class="logo" src="images/logo-bright.svg" />
+          <i class="close bx bx-x"></i>
+        </div>
+        <div class="navDots"></div>
+        <div class="form">
+          <div class="formCard">
+            <div class="heading">
+              <h2 class="number">1.</h2>
+              <h1 class="title">Qual é seu nome?*</h1>
+            </div>
+            <input id="name" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="2">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question2" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">2.</h2>
+              <h1 class="title">Qual é seu melhor e-mail?*</h1>
+            </div>
+            <input id="email" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="3">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question3" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">3.</h2>
+              <h1 class="title">Qual seu número?*</h1>
+            </div>
+            <input id="number" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="4">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question4" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">4.</h2>
+              <h1 class="title">Qual o segmento da empresa?*</h1>
+            </div>
+            <input id="segment" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="5">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question5" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">5.</h2>
+              <h1 class="title">Qual seu faturamento médio mensal?*</h1>
+            </div>
+            <input id="invoicing" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="6">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question6" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">6.</h2>
+              <h1 class="title">
+                Você já investe acima de 5k/mês em marketing?*
+              </h1>
+            </div>
+            <input id="investment" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="7">
+                Ok <i class="bx bx-check"></i>
+              </button>
+              <span class="errorMessage"
+                >Preencha este campo <i class="bx bxs-error"></i
+              ></span>
+            </div>
+          </div>
+          <div id="question7" class="formCard inactive">
+            <div class="heading">
+              <h2 class="number">7.</h2>
+              <h1 class="title">Coloque aqui o site da sua empresa.*</h1>
+            </div>
+            <input id="site" type="text" placeholder="Responda aqui..." />
+            <div class="errorMessageContainer">
+              <button class="okBtn" type="button" id="final">
+                ACELERAR MEU NEGÓCIO! <i class="bx bx-check"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="thanksCard">
+      <i class="thanksClose bx bx-x"></i>
+      <img src="images/thankYouScreen.svg" alt="Thank You!" />
+    </div>
+    <div class="root">
+      <header class="headerContainer">
+        <img src="images/logo-bright.svg" alt="Logo" />
+        <h1>
+          Você não está pronto para <br />
+          atender a <button class="span">demanda de cliente</button><br />
+          que nós podemos te entregar!
+        </h1>
+        <button class="dialogOpener">VENDER MAIS</button>
+      </header>
+      <section class="secondContainer">
+        <article class="topLinedText">
+          <hr class="textTopLine" />
+          <p>
+            Após lotar a caixa de mensagens de diversas empresas que não sabiam
+            vender para seus clientes, nós deixamos de ser uma Agência de
+            Marketing para nos tornarmos uma Aceleradora de Negócios!
+          </p>
+        </article>
+      </section>
+      <section class="thirdContainer">
+        <article>
+          <h1>
+            Como uma aceleradora, nós podemos te entregar soluções 360 tanto
+            para gargalos no Marketing quanto aprimorar o seu processo de vendas
+            como um todo.
+          </h1>
+          <p>
+            <strong>Nós não queremos desperdiçar seu tempo</strong>, então
+            pedimos para que preencha um formulário antes, assim podemos chegar
+            na Reunião entendendo a situação do seu negócio e fazê-lo
+            <button class="span">DECOLAR!</button>
+          </p>
+          <button class="dialogOpener">EU QUERO ACELERAR MEU NEGÓCIO!</button>
+        </article>
+        <article class="topLinedText">
+          <hr class="textTopLine" />
+          <p>
+            Através do método G.S.T.A.O,
+            <strong>temos acelerado diversas empresas desde 2021</strong>,
+            entenda como funciona a nossa forma de trabalhar.
+          </p>
+        </article>
+      </section>
+      <section class="fourthContainer">
+        <h1>Método G.S.T.ã.O</h1>
+      </section>
+      <section class="fifthContainer">
+        <article class="G card">
+          <span
+            data-aos="fade-right"
+            data-aos-anchor=".G"
+            data-aos-anchor-placement="center-bottom"
+            ><span class="letter">G</span></span
+          >
+          <div>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-anchor=".G"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Get Ready
+            </h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-anchor=".G"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <strong
+                >Vamos mapear, estudar e organizar toda a nossa
+                implementação.</strong
+              >
+            </h3>
+          </div>
+          <div>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-anchor=".G"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Persona da Empresa;
+            </p>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="400"
+              data-aos-anchor=".G"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Pesquisa de Mercado, Público e Produto.
+            </p>
+          </div>
+        </article>
+        <canvas
+          data-aos="line-animation"
+          data-aos-anchor=".S"
+          data-aos-anchor-placement="center-bottom"
+        ></canvas>
+        <article class="S card">
+          <span
+            data-aos="fade-right"
+            data-aos-anchor=".S"
+            data-aos-anchor-placement="center-bottom"
+            ><span class="letter">S</span></span
+          >
+          <div>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-anchor=".S"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Smart
+            </h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-anchor=".S"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <strong
+                >Desenvolvimento do plano de ação construído a partir das dores
+                do cliente</strong
+              >
+            </h3>
+          </div>
+          <div>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-anchor=".S"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Plano de Ação das estratégias de Marketing e Vendas
+            </p>
+          </div>
+        </article>
+        <canvas
+          data-aos="line-animation"
+          data-aos-anchor=".T"
+          data-aos-anchor-placement="center-bottom"
+        ></canvas>
+        <article class="T card">
+          <span
+            data-aos="fade-right"
+            data-aos-anchor=".T"
+            data-aos-anchor-placement="center-bottom"
+            ><span class="letter">T</span></span
+          >
+          <div>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-anchor=".T"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Time
+            </h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-anchor=".T"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <strong
+                >É hora de estruturar o projeto! Também construiremos os funis
+                de Marketing e Comercial.</strong
+              >
+            </h3>
+          </div>
+          <div>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-anchor=".T"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Funil's de Marketing
+            </p>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="400"
+              data-aos-anchor=".T"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Funil's de Vendas
+            </p>
+          </div>
+        </article>
+        <canvas
+          data-aos="line-animation"
+          data-aos-anchor=".A"
+          data-aos-anchor-placement="center-bottom"
+        ></canvas>
+        <article class="A card">
+          <span
+            data-aos="fade-right"
+            data-aos-anchor=".A"
+            data-aos-anchor-placement="center-bottom"
+            ><span class="letter">A</span></span
+          >
+          <div>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-anchor=".A"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Act
+            </h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-anchor=".A"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <strong
+                >Ação! Chegou a hora de colocar a máquina para rodar</strong
+              >
+            </h3>
+          </div>
+          <div>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-anchor=".A"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Início das Campanhas e todas as ações publicitárias e de vendas
+            </p>
+          </div>
+        </article>
+        <canvas
+          data-aos="line-animation"
+          data-aos-anchor=".O"
+          data-aos-anchor-placement="center-bottom"
+        ></canvas>
+        <article class="O card">
+          <span
+            data-aos="fade-right"
+            data-aos-anchor=".O"
+            data-aos-anchor-placement="center-bottom"
+            ><span class="letter">O</span></span
+          >
+          <div>
+            <h2
+              data-aos="fade-right"
+              data-aos-delay="200"
+              data-aos-anchor=".O"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Optimize
+            </h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-anchor=".O"
+              data-aos-anchor-placement="center-bottom"
+            >
+              <strong
+                >Constante análise e otimização dos processos e
+                campanhas.</strong
+              >
+            </h3>
+          </div>
+          <div>
+            <p
+              class="mobile-off"
+              data-aos="fade-up"
+              data-aos-delay="350"
+              data-aos-anchor=".O"
+              data-aos-anchor-placement="center-bottom"
+            >
+              Criação de novas frentes de testes e otimização de processos e
+              resultados através de Análise de Dados constante
+            </p>
+          </div>
+        </article>
+        <canvas
+          data-aos="line-animation"
+          data-aos-anchor=".O"
+          data-aos-anchor-placement="center-bottom"
+        ></canvas>
+      </section>
+      <section class="sixthContainer">
+        <div class="heroImage">
+          <article>
+            <h1>Quem Somos?</h1>
+            <p>
+              Uma Aceleradora fundada por 4 sócios que sonhavam em faturar
+              milhões através da Internet, a Gstão nasceu da percepção de que a
+              maior parte dos negócios não vendem bem na Internet por 4 motivos:
+            </p>
+          </article>
+          <div class="parent">
+            <div class="div1">
+              <img src="images/frame6-card1.svg" alt="card" />
+            </div>
+            <div class="div2">
+              <img src="images/frame6-card2.svg" alt="card" />
+            </div>
+            <div class="div3">
+              <img src="images/frame6-card3.svg" alt="card" />
+            </div>
+            <div class="div4">
+              <img src="images/frame6-card4.svg" alt="card" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="seventhContainer">
+        <div class="topLinedText">
+          <hr class="textTopLine" />
+          <p>
+            Desde o início de nossa jornada, focamos em trazer resultados
+            previsíveis e seguros para os nossos clientes através de estratégias
+            montadas especialmente para a sua empresa.
+          </p>
+        </div>
+        <p>
+          Foi pensando nisso, que a Gstão expandiu a sua solução até o pilar do
+          Setor comercial, onde realmente as vendas se concretizam.
+        </p>
+      </section>
+      <footer class="footerContainer">
+        <img src="images/logo-large.svg" alt="Logo" />
+        <div>
+          <h1>Contato</h1>
+          <a
+            class="textLink"
+            href="mailto:contato@gstao.com.br"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            contato@gstao.com.br
+          </a>
+          <a
+            class="textLink"
+            href="https://wa.me/48991635928"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            +55 48 99163-5928
+          </a>
+        </div>
+        <div>
+          <h1>Sites</h1>
+          <a
+            class="textLink"
+            href="https://gstao.com.br/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Site Gstão
+          </a>
+          <a
+            class="textLink"
+            href="https://www.blog.gstao.com.br/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Blog Gstão
+          </a>
+        </div>
+        <div>
+          <h1>Redes Sociais</h1>
+          <div class="footerSocialMedias">
+            <a
+              class="iconLink"
+              href="https://www.linkedin.com/in/gst%C3%A3o-marketing-e-vendas-671bb522b/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img src="images/linkedIn-icon.svg" alt="LinkedIn" />
+            </a>
+            <a
+              class="iconLink"
+              href="https://www.instagram.com/gstaomkt/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img src="images/instagram-icon.svg" alt="Instagram" />
+            </a>
+            <a
+              class="iconLink"
+              href="https://www.facebook.com/gstaomkt/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <img src="images/facebook-icon.svg" alt="Facebook" />
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        anchorPlacement: "center-bottom",
+      });
+    </script>
+    <script src="./node_modules/flickity/dist/flickity.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script type="module" src="./index.js"></script>
+    <script type="module" src="./mail.js"></script>
+    
+    
+  </body>
+</html>
