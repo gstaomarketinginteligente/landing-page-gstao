@@ -22,7 +22,7 @@ function insert_value() {
   var segment= dialogForm.segment;
   var invoicing= dialogForm.invoicing;
   var investment= dialogForm.investment;
-  var site= site;
+  var site= dialogForm.site;
   console.log(name);
   var url = script_url+"?callback=ctrlq&name="+name+"&number="+number+"&email="+email+"&invoicing="+invoicing+"&segment="+segment+"&investment="+investment+"&site="+site+"&action=insert"; 
   var request = jQuery.ajax({
