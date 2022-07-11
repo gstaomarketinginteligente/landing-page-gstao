@@ -1,64 +1,37 @@
 const dialogForm = {
-  name: "",
-  email: "",
-  number: "",
-  segment: "",
-  invoicing: "",
-  investment: "",
-  site: "",
+  name: '',
+  email: '',
+  number: '',
+  segment: '',
+  invoicing: '',
+  investment: '',
+  site: '',
 };
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBDLcn8w_vA92O3QYe5cATI168eCtpCkyw",
-  authDomain: "form-lp-gstao.firebaseapp.com",
-  databaseURL: "https://form-lp-gstao-default-rtdb.firebaseio.com",
-  projectId: "form-lp-gstao",
-  storageBucket: "form-lp-gstao.appspot.com",
-  messagingSenderId: "256491077335",
-  appId: "1:256491077335:web:c03e8ec18a5a0722813a92",
-  measurementId: "G-VHFE2DPXPM",
-};
-
-firebase.initializeApp(firebaseConfig);
-
-var contactFormDB = firebase.database().ref("1DsvQNErb5OkDeM-hul6eOPDTHGaYWqha0P9DNbL2iXo");
-
-const saveMessages = (
-  name,
-  email,
-  number,
-  segment,
-  invoicing,
-  investment,
-  site
-) => {
-  var newContactForm = contactFormDB.push();
-
-  newContactForm.set({
-    name: name,
-    email: email,
-    number: number,
-    segment: segment,
-    invoicing: invoicing,
-    investment: investment,
-    site: site,
-  });
-};
-
-function submitForm() {
-  saveMessages(
-    dialogForm.name,
-    dialogForm.email,
-    dialogForm.number,
-    dialogForm.segment,
-    dialogForm.invoicing,
-    dialogForm.investment,
-    dialogForm.site
-  );
-}
 
 let counter = 0;
 
+var script_url ="https://script.google.com/d/14bqHfu63F6UL9FjyYoLkio4h8apv3xXrc5ek72-L9BmMmehJIo-F5dDZ/edit?mid=ACjPJvGX5MacnJef3E-5QRqOdYpO6mOO5EMDlbDERXiNZb933AFDeWm8OEyGWHqGdQKQq7CMQLkDXnyORun-HqUDiqOYGt1iohqrFQYBlBPIQkpiKKN_8x9-UjWBCMp0QaVAqSxTPRZ20A&uiv=2";
+var emailcheck=false;
+  // Make an AJAX call to Google Script
+
+function insert_value() {
+
+  var name= dialogForm.name;
+  var email= dialogForm.email;
+  var number= dialogForm.number;
+  var segment= dialogForm.segment;
+  var invoicing= dialogForm.invoicing;
+  var investment= dialogForm.investment;
+  var site= site;
+  console.log(name);
+  var url = script_url+"?callback=ctrlq&name="+name+"&number="+number+"&email="+email+"&invoicing="+invoicing+"&segment="+segment+"&investment="+investment+"&site="+site+"&action=insert"; 
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: url ,
+    method: "GET",
+    dataType: "jsonp"
+  });
+}
 window.onload = () => {
   const cardsCarousel = document.querySelector(".parent");
   const cards = [...cardsCarousel.children];
@@ -136,9 +109,12 @@ window.onload = () => {
   closeDialogBtn.addEventListener("click", closeDialog);
   document.querySelector(".thanksClose").addEventListener("click", closeDialog);
   finalBtn.addEventListener("click", endDialog);
-  finalBtn.addEventListener("click", submitForm);
+  finalBtn.addEventListener("click", insert_value);
+
+
 
   // console.log(dialogForm);
+  
 
   if (window.screen.width < 600) {
     cardsCarousel.className = "carousel";
