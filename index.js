@@ -10,7 +10,7 @@ const dialogForm = {
 
 let counter = 0;
 
-var script_url ="https://script.google.com/home/projects/14bqHfu63F6UL9FjyYoLkio4h8apv3xXrc5ek72-L9BmMmehJIo-F5dDZ/edit";
+var script_url ="https://script.google.com/macros/s/AKfycbxOhOXN-3vgDdP7u63tsDWCCHk3DRhm8OiqR-wLsQUKaWEn5GGn/exec";
 var emailcheck=false;
   // Make an AJAX call to Google Script
 
