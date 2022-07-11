@@ -10,7 +10,7 @@ const dialogForm = {
 
 let counter = 0;
 
-var script_url ="https://script.google.com/d/14bqHfu63F6UL9FjyYoLkio4h8apv3xXrc5ek72-L9BmMmehJIo-F5dDZ/edit?mid=ACjPJvGX5MacnJef3E-5QRqOdYpO6mOO5EMDlbDERXiNZb933AFDeWm8OEyGWHqGdQKQq7CMQLkDXnyORun-HqUDiqOYGt1iohqrFQYBlBPIQkpiKKN_8x9-UjWBCMp0QaVAqSxTPRZ20A&uiv=2";
+var script_url ="https://script.google.com/home/projects/14bqHfu63F6UL9FjyYoLkio4h8apv3xXrc5ek72-L9BmMmehJIo-F5dDZ/edit";
 var emailcheck=false;
   // Make an AJAX call to Google Script
 
