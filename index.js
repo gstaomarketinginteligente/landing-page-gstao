@@ -108,8 +108,8 @@ window.onload = () => {
   showDialogBtns.forEach((btn) => btn.addEventListener("click", showDialog));
   closeDialogBtn.addEventListener("click", closeDialog);
   document.querySelector(".thanksClose").addEventListener("click", closeDialog);
-  finalBtn.addEventListener("click", endDialog);
   finalBtn.addEventListener("click", insert_value);
+  finalBtn.addEventListener("click", endDialog);
 
 
 
